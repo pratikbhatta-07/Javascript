@@ -1,0 +1,54 @@
+string = a sequence of characters
+immutable and 0-indexed
+
+create string : let str = "Chinu"
+string length : str.length
+string indices : str[index] --> access characters
+
+template literals :
+created using backticks ``
+used for string interpolation
+eg : let output = `Sum of a and b is ${a + b}`
+we can use variables in a string
+
+escape characters :
+\n = next line
+\t = a tab space
+
+string methods :
+str.toUpperCase(), str.toLowerCase()
+
+str.trim() --> remove all white spaces from beginnning and end
+
+str.slice(startIndex, endIndex) -> returns string from startIndex to endIndex - 1
+        endIndex is exclusive and optional
+        str.slice(startIndex)--> returns string from startIndex to last index
+        
+        we can also give negative index. negative index starts from rhs
+        eg : chinu [u = -1 c = -5]
+
+str.sunstring(startIndex, endIndex)
+    same as slice but substring does not support negative index
+
+str1.concat(str2) -->concatinate 2 strings
+for multiple strings to concatenate we can use + operator
+eg : str1 + str2 + str3
+
+str.replace(oldVal, newVal)
+eg : str.replace("hi", "ab") //cabnu hi is replaced by ab
+str.replaceAll(oldVal, newVal) --> replace all appearence 0f old value by new value
+
+str.charAt(index) / str[index]
+
+str.includes(substr) --> returns true if the substring is present in the string
+eg : let str = "javascript";
+     console.log(str.includes("script")); // true
+
+str.indexOf("string") --> returns the starting index of given string
+
+str.split("char") --> splits the string where char occurs and returns them in an array
+eg : let str = abbcddefcab
+     let arr = str.split("c"); // ["abb", "ddef", "ab"]
+
+     let str = "hello";
+     let arr = str.split("");// ["h","e","l","l","o"]

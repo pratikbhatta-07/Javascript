@@ -1,0 +1,33 @@
+1. map.put(key, value) :
+    insert element in the map.
+    if key already exist, put() update the value as HashMap does not allow duplicate keys
+
+2. map.get(key) :
+    return the value of the key.
+    if the given dooesn not exist return null
+
+3. map.remove(key) :
+    retuen value of the key if key exist also removes the entry from the map
+    else return null
+
+4. map.contains(key) :
+    return true if key is present in the map
+    else return false
+
+5. map.putIfAbsent(key, value) :
+    put the entry in the map if previously not existed
+
+6. map.keySet() :
+    get all values of the map as a list
+
+7. map.values() :
+    get all values in the map as a list
+
+8. map.entrySet() :
+    return all entries of the map as a list
+    datatype of each entry is : Map.Entry<key datatype, value datatype>
+    ex :-
+    for(Map.Entry<String, Integer> e : map.entrySet()){
+        System.out.println(e.getKey() + e.getValue());
+    }
+

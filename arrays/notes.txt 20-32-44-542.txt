@@ -1,0 +1,47 @@
+arrays = store multiple value in single variable
+"arrays are special type of object whose keys are strings which look like numbers"
+mixed datatype
+dynamic size
+
+let arr = [1, 2, 3]
+console.log(arr);
+
+------------------------------ADDING ELEMENTS---------------------------------
+arr.push(4) --> insert n at the end of the array // arr = [1, 2, 3, 4]
+                TC : O(1)
+arr.unshift(0) --> insert n at the start of the array // arr = [0, 1, 2, 3, 4]
+                TC : O(n)
+
+------------------------------REMOVING ELEMENTS---------------------------------
+arr.pop() --> delets last element // arr = [0, 1, 2, 3]
+    TC : O(1)
+arr.shift() --> delets first element // arr = [1, 2, 3]
+    TC : O(n)
+
+arr.slice(startIndex, endIndex) --> return new array with elements from startIndex to endIndex - 1
+                                    (end index is exclusive) of arr
+
+arr.splice(start, deleteCount, insert(optional)) --> starting from start deleted next deleteCount  elements from the array and insert the given elemnts(if given any)
+modifies the original array
+returns the removed elements as a new array
+
+arr.toString() --> converts the array to a single string
+
+arr.indexOf(n) --> returns the index of n in the array if present else return -1
+
+arr.includes(n) --> returns true if arr contains n else return false
+
+arr.join(n) --> return a string adding n after each element of arr
+arr.join('-') // 1-2-3
+
+arr.reverse() --> reverse the array
+
+---------------------------------------------+
+arr.sort() --> returns the sorted array.     |
+imp : js sorts the array elements as strings |
+    eg : [100, 25, 3] --> [100, 25, 3]       |
+---------------------------------------------+
+
+destructing :
+let arr = [10,20,30];
+let [a,b,c] = arr;

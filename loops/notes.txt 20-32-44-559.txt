@@ -1,0 +1,29 @@
+for-of loop :
+    syntax : for(let n of variableName){
+                body
+             }
+for of loop is generally used forniterating in strings or array datatypes.
+ex : 
+
+let name = "Pratik Bhatta"
+for(let c of name){
+    console.log(c);
+}
+
+
+for-in loop :
+ syntax : for(let var in objectName) {
+            body
+        }
+
+for in loop is generally used for traversing object by keys
+eg : 
+const student = {
+    name : "Pratik",
+    reg : "2341002171",
+    cgpa : 8.9,
+    isPass : true,
+};
+for(let key in student){
+    console.log(key, student[key]);
+}

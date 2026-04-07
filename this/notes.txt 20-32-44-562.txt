@@ -1,0 +1,66 @@
+"this" refers to the current context
+for example :
+
+const user = {
+    name : "Pratik",
+    age : 21,
+    id : 07,
+    message : function(){
+        console.log(`${this.name}, Hello`);
+    }
+};
+user.message(); // Pratik, Hello
+user.name = "Chinu";
+user.message(); // Chinu, Hello
+
+if we just console.log(this) it will print the current context
+for example :
+
+const user = {
+    name : "Pratik",
+    age : 21,
+    id : 7,
+    context : function() {
+        console.log(this);
+    }
+};
+user.context(); // { name: 'Pratik', age: 21, id: 7, context: [Function: context] }
+
+if we do console.log(this) in global scope it will print {}
+
+there are 2 things for "this" current context :-
+1. when function is called normally(no object)
+    example :
+
+    function print() {
+    let username = "Pratik";
+    console.log(this.username);
+    }
+    print(); // called normally
+
+    it will print undefined because when function is called normally "this" current context is global
+    scope and when we print "this" in global scope it will give undefined
+
+2. when function is called with object
+    const user = {
+        name : "Pratik",
+        print : function() {
+            console.log(this.username);
+        }
+    };
+    user.print() // called with object
+
+    now the current context of this is the object(user)
+
+
+when we do
+
+function print() {
+    username = "Pratik";
+    console.log(this.username);
+}
+print(); // Pratik
+
+it will print "Pratik" because we have not declared username with any keyword (let/const/var)
+when we do this username bydefault belongs to global scope and when the function is called
+normally "this" refers to global scope. so this.username = Pratik

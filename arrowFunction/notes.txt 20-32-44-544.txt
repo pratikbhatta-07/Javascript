@@ -1,0 +1,36 @@
+syntax : functionName = (parameters) => (value to be returned)
+eg : const addTwo = (num1, num2) => (num1 + num2);
+
+or we can write 
+
+syntax : functionName = (parameters) => {
+    return value
+    }
+
+---------------------------------------------------------------------------------+
+1. when we use parenthesis () we dont write "return" keyword --> implcit return  |
+    ex : const addTwo = (num1, num2) => (num1 + num2);                           |
+                                                                                 |
+2. but when we use {} we write "return" keyword --> explcit return               |
+    ex : const addTwo = (num1, num2) => {                                        |
+            return num1 + num2;                                                  |
+         };                                                                      |
+---------------------------------------------------------------------------------+
+
+to return object we use ({object}) because if we write 
+
+const getUser = () => {Name : "Pratik"};
+console.log(getUser); // [Function: getUser]
+
+because {} is treated as function body and not as object
+
+eg : const fun = () => ({username : "pratik"}); --> correct syntax to return an object in arrow
+    function
+
+important notes :
+--------------------
+1. arrow function cant be used as constructor 
+2. arrow function does not have their own "this" keyword. they borrow it from parents (lexical this)
+3. arrow function cannot be used as object methods
+4. aroow function have no prototype
+5. arrow function best usage --> filter, map, reduce

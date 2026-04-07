@@ -1,0 +1,45 @@
+function --> block of reusable code
+
+syntax : function functionName(parameters) {
+                //body
+            }
+
+parameter --> whatever we pass in the function while declaring
+arguements --> whatever we pass in the function while calling
+
+But what if we dont pass any arguement to a parameterised function ?
+    the parameter then now is considered to be "undefined"
+    for example :
+    function greet(username){
+        return `${username}, Good Morning`;
+    }
+    console.log(greet()) // undefined, Good Morning
+    undefined because we did ot pass anything as username
+
+
+to avoid this type of situation we always give default value to the parameter
+for example :
+
+function greet(username = "pratik"){
+        return `${username}, Good Morning`;
+    }
+    console.log(greet()) // pratik, Good Morning
+
+    it printed pratik because we did not pass any parameter. So the default value is printed
+
+function greet(username = "pratik"){
+        return `${username}, Good Morning`;
+    }
+    console.log(greet("chinu))  // chinu, Good Morning
+
+    it printed chinu because we passes the parameter as chinu. the value is overwritten
+
+use of "..." operator
+
+function nums(...num){
+    return num;
+}
+console.log(nums(1,2,3,4,5)) // [1,2,3,4,5]
+
+although we gave 1 parameter but passed multiple argument
+what ... does is passed all argument one by one to function and returned an array

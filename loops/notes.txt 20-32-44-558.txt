@@ -1,0 +1,45 @@
+break --> after break keyword we will move out of loop scope
+
+
+                        FOR-OF LOOP
+-----------------------------------------------------------
+
+"for-of loop iterates over the values not the indices"
+
+whenever we write the code of for-of loop like below, it will print the values :
+
+let a = ["MS Dhoni", "Virat Kohli", "Rohit Sharma"]
+for(const names of a) {
+    console.log(names); // MS Dhoni, Virat Kohli, Rohit Sharma
+}
+
+
+
+                        FOR-IN LOOP
+------------------------------------------------------------
+
+"for-in loop iterates over the key not the values"
+
+the code :
+
+let names = ["Chinu", "Rabi", "Raj"]
+for (i in names) {
+    console.log(i); // 0 1 2
+}
+
+it prints indices not values
+
+                            FOR-EACH LOOP
+------------------------------------------------------------
+
+syntax : arrayName.forEach( callbackFunction (iterator) {
+            function body
+        } )
+eg : 
+
+let a = ["MS Dhoni", "Virat Kohli", "Rohit Sharma"]
+a.forEach( function (players) {
+    console.log(players);
+} );
+
+for-each loop will be widely used when there is an array of objects
