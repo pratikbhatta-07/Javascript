@@ -1,0 +1,110 @@
+                                            BASICS
+                                        ----------------
+by default javascript is single threaded and synchronous which means each line waits for the previous one to get executed.
+
+
+                                            CALLBACKS
+                                        --------------------
+
+CALLBACK --> function which is passed to other function as a parameter which gets executed when the main function calls it
+simple example -->
+
+function greet(name, calback) {
+    console.log("Hi " + name);
+    callback();
+}
+function bye() {
+    console.log("Bye!");
+}
+greet("Pratik", bye); // Hi Pratik \n Bye
+
+CALLBACK HELL --> where there are too many nested callbacks which makes code difficult to read and debug
+                    can be avoided by using promises, async/await
+
+        SYNCHRONOUS CALLBACK :-
+runs immediately / no delay
+example :
+function greet(name, calback) {
+    console.log("Hi " + name);
+    callback();
+}
+function bye() {
+    console.log("Bye!");
+}
+greet("Pratik", bye); // Hi Pratik \n Bye
+
+        ASYNCHRONOUS CALLBACK :-
+executes later
+example :
+function fetchData(callback) {
+    console.log("first");
+
+    setTimeout( () => {
+        console.log("second");
+        callback();
+    }, 2000);
+}
+function process(){
+    console.log("Processing data");
+}
+fetchData(process); // first \n second (after 2 sec)
+
+
+                                            setTimeout()        
+                                    ----------------------------
+
+it is used to execute a function after delay
+syntax --> setTimeout(function, delay, ...args);
+
+IMPORTANT NOTE :-
+1. javascript does not actually wait
+2. setTimeout() goes to web/node api
+3. js continues next lines
+4. after delay -> callbacl goes to callback queue
+5. event loop pushes event
+6. then it runs
+
+IMPORTANT BEHAVIOUR :-
+
+console.log("First")
+setTimeout( () => {
+    console.log("timeout");
+}0);
+console.log("Second"); // first \n second \n timeout
+
+"even though 0ms is given it still does not run immediately because the event stil goes through event loop"
+what ever time delay (lets say t ms ) is given it means it will eun after atleast t sec not immediately
+
+use cases :-
+api delays, animations, backend scheduling
+
+IMPORTANT CONCEPT :-
+
+1. var behaviour
+for(var i = 0; i < 3; i++) {
+    setTimeout( () => {
+        console.log(i);
+    }, 1000);
+}
+output --> 3 3 3
+the ideal output should be 0 1 2
+but the ouptput is 3 3 3 because var is golbal scoped. it does not create multiple i, instead it stores reference of i for each iteration for i = 0, 1, 2 callback is created and when i becomes 3 loop ends. now the i stores the reference of 3. after 1 sec when all calback goes to callback queue and executes console.log(i) three times where the value of i is 3 so 3 gets printed three times. we can fix this by let.
+
+2. let behaviour
+for(var i = 0; i < 3; i++) {
+    setTimeout( () => {
+        console.log(i);
+    }, 1000);
+}
+output --> 0, 1, 2
+this is because let is block scoped. for each iteration it creates memory for different i.
+Iteration 1 → i = 0 (new memory)
+Iteration 2 → i = 1 (new memory)
+Iteration 3 → i = 2 (new memory)
+so each callback points to different i and prints 0, 1, 2
+
+
+                                            EVENT LOOP   
+                                    ------------------------
+
+EVENT LOOP --> mechanism that manages the execution of asynchronous js                               
